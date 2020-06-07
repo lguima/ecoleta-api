@@ -17,5 +17,6 @@ uploads/storage/*
 !uploads/storage/.gitkeep
 
 *.sqlite
+!build/src/database/database.sqlite
 
 .DS_Store
