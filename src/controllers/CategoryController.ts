@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import knex from '../database/connection';
+import '../lib/env';
 
 class CategoryController {
   async index(request: Request, response: Response) {
@@ -9,7 +10,7 @@ class CategoryController {
       return {
         id: category.id,
         name: category.title,
-        image_url: `http://localhost:3333/uploads/categories/${category.image}`,
+        image_url: `${process.env.APP_URL}/uploads/categories/${category.image}`,
       };
     });
   
