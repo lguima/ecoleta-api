@@ -45,7 +45,7 @@ Project made by [@lguima](https://github.com/lguima) during the **Next Level Wee
 
 # License
 
-Code under license [GPL-3.0](../LICENSE.md).
+Code under license [GPL-3.0](LICENSE.md).
 
 ---
 
