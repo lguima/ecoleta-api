@@ -9,7 +9,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(routes);
-app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
+
+app.use('/uploads', express.static(
+  path.resolve(
+    process.env.PWD || __dirname,
+    '..',
+    'uploads',
+  )
+));
+
 app.use(errors());
 
 app.listen(process.env.PORT || 3333);
