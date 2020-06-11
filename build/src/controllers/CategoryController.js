@@ -40,6 +40,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var connection_1 = __importDefault(require("../database/connection"));
+require("../lib/env");
 var CategoryController = /** @class */ (function () {
     function CategoryController() {
     }
@@ -55,7 +56,7 @@ var CategoryController = /** @class */ (function () {
                             return {
                                 id: category.id,
                                 name: category.title,
-                                image_url: "http://localhost:3333/uploads/categories/" + category.image,
+                                image_url: process.env.APP_URL + "/uploads/categories/" + category.image,
                             };
                         });
                         return [2 /*return*/, response.json(serializedCategories)];

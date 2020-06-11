@@ -51,6 +51,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var connection_1 = __importDefault(require("../database/connection"));
+require("../lib/env");
 var PointController = /** @class */ (function () {
     function PointController() {
     }
@@ -74,7 +75,7 @@ var PointController = /** @class */ (function () {
                     case 1:
                         points = _b.sent();
                         serializedPoints = points.map(function (point) {
-                            return __assign(__assign({}, point), { image_url: "http://localhost:3333/uploads/storage/" + point.image });
+                            return __assign(__assign({}, point), { image_url: process.env.APP_URL + "/uploads/storage/" + point.image });
                         });
                         return [2 /*return*/, response.json(serializedPoints)];
                 }
@@ -94,7 +95,7 @@ var PointController = /** @class */ (function () {
                         if (!point) {
                             return [2 /*return*/, response.status(404).json({ message: 'Point not found.' })];
                         }
-                        serializedPoint = __assign(__assign({}, point), { image_url: "http://localhost:3333/uploads/storage/" + point.image });
+                        serializedPoint = __assign(__assign({}, point), { image_url: process.env.APP_URL + "/uploads/storage/" + point.image });
                         return [4 /*yield*/, connection_1.default('categories')
                                 .join('point_categories', 'categories.id', '=', 'point_categories.category_id')
                                 .where('point_categories.point_id', id)
