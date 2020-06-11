@@ -1,6 +1,11 @@
 node_modules/
 npm-debug.log
 
+!build/
+
+build/*
+!build/src/database/database.sqlite
+
 /*.env
 
 !uploads/
@@ -13,8 +18,5 @@ uploads/*
 !uploads/storage/
 uploads/storage/*
 !uploads/storage/.gitkeep
-
-*.sqlite
-!build/src/database/database.sqlite
 
 .DS_Store
