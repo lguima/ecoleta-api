@@ -14,7 +14,7 @@ app.use('/uploads', express.static(
   path.resolve(
     process.env.PWD || __dirname,
     '..',
-    'uploads',
+    'assets',
   )
 ));
 
