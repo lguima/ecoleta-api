@@ -6,7 +6,11 @@ import { errors } from 'celebrate';
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: process.env.ECOLETA_WEB_URL,
+  optionsSuccessStatus: 200,
+}));
+
 app.use(express.json());
 app.use(routes);
 
