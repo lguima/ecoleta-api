@@ -9,8 +9,6 @@ uploads/*
 !uploads/.gitkeep
 
 !uploads/categories/
-uploads/categories/*
-!uploads/categories/.gitkeep
 
 !uploads/storage/
 uploads/storage/*
