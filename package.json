@@ -19,9 +19,8 @@
   "license": "GPL-3.0",
   "main": "index.js",
   "scripts": {
-    "build": "npm run copy:assets && tsc",
-    "start": "node build/src/server.js",
-    "copy:assets": "cp -rv ./uploads/categories/ build/uploads/ && cp -rv ./uploads/storage/.gitkeep build/uploads/storage/.gitkeep",
+    "build": "tsc",
+    "start": "npm run build && node build/src/server.js",
     "dev": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts",
     "migrate": "knex --knexfile knexfile.ts migrate:latest",
     "seed": "knex --knexfile knexfile.ts seed:run"
