@@ -3,7 +3,7 @@ npm-debug.log
 
 !build/
 
-build/*
+build/**
 !build/src/database/database.sqlite
 
 /*.env
