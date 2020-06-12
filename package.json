@@ -20,8 +20,9 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
-    "copy:assets": "cp -rv ./uploads/categories/ build/uploads/",
-    "build": "npm run tsc && npm run copy:assets",
+    "mkdirs": "mkdir -p build/uploads",
+    "copy:assets": "cp -rv uploads/categories build/uploads",
+    "build": "npm run tsc && npm run mkdirs && npm run copy:assets",
     "start": "node build/src/server.js",
     "dev": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts",
     "migrate": "knex --knexfile knexfile.ts migrate:latest",
